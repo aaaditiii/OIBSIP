@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://hblimg.mmtcdn.com/content/hubble/img/gulmarg/mmt/destination/m_Gulmarg_activity_mountains_l_460_690.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Snowy Peaks Haven, Gulmarg Retreat</h1>
+      <h3>*Description:*</h3>
+       <p>Discover winter's magic at our 'Escape to Snowy Peaks: Gulmarg Retreat.' Nestled amidst the majestic Himalayas, Gulmarg offers a haven for snow lovers. Ski down pristine slopes, enjoy scenic gondola rides, and cozy up in comfort amid breathtaking mountain views. With personalized service and unforgettable experiences, embrace the charm of winter in this serene retreat.</p>
+       <h3> *Highlights:* </h3>
+       <p> <ul>-*Alpine Escapades:*Immerse yourself in Gulmarg's alpine wonders, from thrilling adventures to serene vistas, or unwind in cozy mountain accommodations.
+        - *Twilight Serenity:* Witness Gulmarg's tranquil evenings with captivating sunsets, soothing melodies, and delectable dinners amidst the snow-capped peaks.
+        - *Mountain Flavors:* Indulge in Kashmiri cuisine at local eateries, savoring hearty dishes and aromatic teas against the backdrop of majestic mountain panoramas.
+        - *Artisanal Delights:* Explore Gulmarg's markets for handmade crafts, textiles, and jewelry, immersing yourself in the region's vibrant culture and craftsmanship.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 55,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://th.bing.com/th/id/R.281ee0324715dbe6d4d7c8c4d223df62?rik=r%2bMZZsM4ScjUog&riu=http%3a%2f%2fthetravellingsquid.com%2fwp-content%2fuploads%2f2014%2f02%2fGulmarg-sky.jpg&ehk=YPOEbp3fmAtKLzNfA43L0BjnhgV83iu%2fWpLZejiHOh4%3d&risl=1&pid=ImgRaw&r=0" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://img.lifeisoutside.com/getaways/2063/microsite/the-khyber-himalayan-resort-and-spa-gulmarg-144048.jpg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://media.cntraveller.in/wp-content/uploads/2014/01/Room-2017-at-The-Khyber-Himalayan-Resort-and-Spa%2C-Gulmarg-178938235-866x487.jpg" alt="Image 2">
+      </div>
+      
+    
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

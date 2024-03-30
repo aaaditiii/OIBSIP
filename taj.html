@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg?cs=srgb&dl=taj-mahal-in-india-3881104.jpg&fm=jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Taj Mahal Serenity</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a journey to behold the timeless beauty and grandeur of the Taj Mahal, located in Agra, India. Immerse yourself in the rich history and romantic allure of this iconic monument, revered as a symbol of eternal love and devotion.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- *Taj Mahal Exploration:* Marvel at the breathtaking beauty of the Taj Mahal, a stunning white marble mausoleum that stands as a testament to Mughal architecture and craftsmanship. Explore its intricate carvings, graceful domes, and tranquil gardens, while learning about the poignant love story behind its creation.
+        - *Agra Fort Visit:* Discover the grandeur of Agra Fort, a historic fortress and palace complex that served as the seat of the Mughal Empire. Explore its ornate halls, majestic gates.
+        - *Local Culture and Cuisine:* Indulge in the vibrant culture and flavors of Agra, as you sample delicious Mughlai cuisine, explore bustling bazaars for exquisite handicrafts and souvenirs, and immerse yourself in the rich heritage and traditions of the region.
+        - *Evening Reflection:* Conclude your day with a serene moment of reflection, as you gaze upon the Taj Mahal at sunset, its gleaming marble illuminated by the fading light, creating a sense of timeless beauty and tranquility.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 35,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>2 nights / 3 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://i0.wp.com/landlopers.com/wp-content/uploads/2018/04/Taj-Mahal-India.jpg?fit=1854%2C1512&ssl=1" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://1.bp.blogspot.com/-z9xQhwOgWF4/XOpTfSBTsxI/AAAAAAAAJ7A/-BDXXEQ9oww6rKetAtDaJpzoF7_paJ9DwCLcBGAs/s1600/agra%2Bfort%2B4.jpeg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIP.98UBjOKhy4osFsRCpWwWBwHaFC?pid=ImgDet&w=474&h=322&rs=1" alt="Image 2">
+      </div>
+      
+ 
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

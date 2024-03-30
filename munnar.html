@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://www.oyorooms.com/blog/wp-content/uploads/2017/11/Feature-Image-min-8-1080x720.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Munnar Mountain Escape</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a breathtaking journey to Munnar, a serene hill station nestled amidst the majestic Western Ghats in the southern state of Kerala. Known for its lush tea plantations, misty valleys, and pristine natural beauty, Munnar beckons travelers with its tranquil ambiance and panoramic vistas.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- *Tea Plantation Tours:* Explore the verdant tea estates of Munnar, where rows of emerald-green tea bushes carpet the hillsides, and learn about the art of tea cultivation and processing from knowledgeable local guides.
+        - *Scenic Drives:* Traverse winding mountain roads and scenic pathways that lead to picturesque viewpoints, waterfalls, and valleys, offering breathtaking panoramas of Munnar's mist-covered peaks and cascading streams.
+        - *Adventure Activities:* Indulge in a range of outdoor adventures, including trekking, mountain biking, and camping amidst the rugged terrain of Munnar, offering thrilling experiences and adrenaline-pumping challenges for adventure enthusiasts.
+        </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 30,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>3 nights / 4 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.revv.co.in/blogs/wp-content/uploads/2021/02/Munnar-HD-Image.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://www.munnar.holiday/munnartourism/wp-content/uploads/2018/05/Munnar-Waterfalls.png" alt="Beach Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://munnartravelguide.com/wp-content/uploads/2018/11/tea-museum.jpg" alt="Image 3">
+      </div>
+      
+      <!-- Add more images here if needed -->
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

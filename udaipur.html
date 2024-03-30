@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://myudaipurcity.com/wp-content/uploads/2017/05/header-background.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Lakeview Majesty, Udaipur Serenity</h1>
+      <h3>*Description:*</h3>
+       <p>Discover regal elegance amidst tranquil lakes and majestic palaces. Witness breathtaking sunsets over shimmering waters and indulge in rich Rajasthani flavors. Explore vibrant markets for handcrafted treasures, embracing Udaipur's cultural heritage.</p>
+       <h3> *Highlights:* </h3>
+       <p> <ul>-*Regal Retreat:* Experience Udaipur's royal charm amidst tranquil lakes and majestic palaces.
+        - *Sunset Splendor:* Witness mesmerizing sunsets over serene waters, accompanied by delightful feasts.
+        - *Culinary Delights:* Indulge in Rajasthani flavors against the backdrop of majestic palaces.
+        - *Artisanal Treasures:* Explore markets for handcrafted gems, embracing Udaipur's rich culture.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 55,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.udaipurian.com/wp-content/uploads/2020/02/lake-pichola-udaipur-city-udaipurian.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://www.travel-rajasthan.com/images/experiance-in-rajsthan/forts-and-palaces/udai-vilas-palace-udaipur-travel-rajasthan.jpg" alt=" Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://the007world.com/wp-content/uploads/2019/05/Taj-Lake-Palace-1.jpg" alt="Image 2">
+      </div>
+      
+      
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

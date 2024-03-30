@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://lh5.googleusercontent.com/proxy/4ttACYHPFSkgQ3PdaqeZalWiiRtBwNMgVdZx4fBu_1pu4hHdsyDxNoO3yyYa--cJvyCSUCzPkpiMwVq_B6BXmXph0BRcifulLFn9LS0Xkbm1nHxAcTnIg6EzVzlxAA=s0-d');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Connaught Place Discovery</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a captivating journey to Connaught Place, the heart of New Delhi and one of the city's most vibrant and iconic destinations. Immerse yourself in the rich history, cultural diversity, and bustling energy of this bustling commercial and leisure hub, where old-world charm blends seamlessly with modern sophistication.</p>
+        
+       <h3> *Highlights:*</h3>
+       <p> <ul> - *Historic Landmarks:* Explore the historic landmarks and architectural marvels of Connaught Place, including the imposing facade of the Central Park, the iconic white colonnades, and the majestic fountains that adorn its central plaza.
+        - *Shopping Extravaganza:* Indulge in a world-class shopping experience at Connaught Place, with its array of upscale boutiques, traditional markets, and artisanal shops offering everything from fashion and jewelry to handicrafts and souvenirs.
+        - *Culinary Delights:* Delight your taste buds with a culinary journey through Connaught Place, where you can savor a diverse range of cuisines, from authentic Indian street food to global gourmet delights, served in chic cafes, fine dining restaurants, and local eateries.
+        - *Leisure and Relaxation:* Unwind and recharge amidst the bustling energy of Connaught Place, serene cafes, and tranquil spots perfect for people-watching, and soaking in the vibrant atmosphere.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★☆ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 15,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>3 nights / 4 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://th.bing.com/th/id/R.846a87735d00e9ded32cb99806018862?rik=9ZDA5WP3N6AKHQ&riu=http%3a%2f%2fpropguide.proptiger.com%2fwp-content%2fuploads%2f2014%2f06%2fCannaught-Place_2.jpg&ehk=T%2fC7KlmVelDTSeF%2bzRcXTnrf85qsHH9QgKR1QxaCdmA%3d&risl=&pid=ImgRaw&r=0" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIP.tAiriYoDO9-UJZhrEp4dhgHaE8?pid=ImgDet&w=474&h=316&rs=1" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/R.1a38d04ebaa2d7e02e6899684760a0ba?rik=uKf1dqcUU35Oaw&riu=http%3a%2f%2fim.rediff.com%2fmoney%2f2014%2foct%2fni.jpg&ehk=L7DBsIYF7Wn09YDeV84CPJbmXvP%2f0TsJ2wGbsqPsJPg%3d&risl=&pid=ImgRaw&r=0" alt=" Image 3">
+      </div>
+      
+      
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

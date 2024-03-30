@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://thetravelingca.com/wp-content/uploads/2020/06/Greaves_Vivanta_By_Taj_Malabar-cmprsd-1536x864.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1370px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Kochi Cultural Odyssey</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a captivating journey to Kochi, a historic port city nestled along the tranquil backwaters of Kerala. Known for its rich cultural heritage, vibrant art scene, and eclectic mix of traditions, Kochi offers travelers a fascinating blend of old-world charm and modern sophistication.
+    </p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- *Historic Landmarks:* Explore Kochi's rich tapestry of history and heritage as you visit iconic landmarks such as the Mattancherry Palace, Fort Kochi, and the St. Francis Church, each bearing testament to the city's colonial past and multicultural influences.
+        - *Cultural Immersion:* Immerse yourself in the vibrant cultural scene of Kochi as you stroll through bustling markets, art galleries, and heritage neighborhoods, and witness traditional Kathakali dance performances, martial arts demonstrations, and religious rituals that celebrate the city's diverse cultural heritage.
+        - *Culinary Delights:* Indulge in the tantalizing flavors of Kerala cuisine as you savor authentic local dishes such as seafood delicacies, spicy curries, and traditional snacks at bustling street food stalls, family-run eateries, and upscale restaurants overlooking the Arabian Sea.
+        - *Backwater Cruises:* Embark on a serene backwater cruise along the tranquil waterways of Kochi, where you can witness everyday life along the banks, encounter colorful fishing villages, and marvel at the lush greenery and exotic birdlife that thrives amidst the serene surroundings.
+        </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 30,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>3 nights / 4 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://irisholidays.com/keralatourism/wp-content/uploads/2021/07/places-to-visit-in-kochi.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://thetravelingca.com/wp-content/uploads/2020/07/2230515359_cc3f704ef1_k-1.jpg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://cdn.getyourguide.com/img/tour/56c711d2f41a9.jpeg/148.jpg" alt="Image 3">
+      </div>
+      
+     
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

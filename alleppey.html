@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://www.goindiaholiday.net/images/uploag-img/2018-07-03-11-02-30-747_Alleppey.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Alleppey Backwaters Retreat</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a tranquil journey to Alleppey, the Venice of the East, and immerse yourself in the serene beauty of its enchanting backwaters. Located in the picturesque state of Kerala, Alleppey captivates travelers with its network of tranquil canals, lush greenery, and idyllic villages nestled amidst swaying palms and coconut groves.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- - *Houseboat Experience:* Drift along the tranquil backwaters of Alleppey aboard a traditional houseboat, known as a Kettuvallam, and experience the ultimate in relaxation and luxury as you glide past verdant rice paddies, quaint villages, and verdant mangrove forests.
+        - *Scenic Landscapes:* Marvel at the breathtaking beauty of Alleppey's backwaters, where emerald-green paddy fields, shimmering lakes, and verdant coconut palms create a stunning tapestry of natural beauty, offering countless opportunities for photography and soulful contemplation.
+        - *Culinary Delights:* Indulge in the delicious flavors of Kerala cuisine as you savor authentic local dishes prepared with fresh seafood, aromatic spices, and organic produce sourced from the fertile lands surrounding Alleppey's backwaters.
+        </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 30,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>3 nights / 4 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.clubmahindra.com/blog/media/section_images/shuttersto-5ffbc7b5db1d9cb.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://baywatchbeachresortalleppey.com/images/gallery/gallery6.jpg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/R.a578d236b01b10fbfe54c622624dfaf3?rik=PZx3la%2fbRwcJRA&riu=http%3a%2f%2falapihouseboat.com%2fimages%2fslide_03.jpg&ehk=WgOTUfltgPgquTvm2%2fF14uXwC2Bp5GBThbO%2f5kFO%2fao%3d&risl=&pid=ImgRaw&r=0" alt="Image 3">
+      </div>
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

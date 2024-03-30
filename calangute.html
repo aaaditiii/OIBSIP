@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1314723038_20190822145625.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Calangute Beach Retreat</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a rejuvenating journey to Calangute Beach, known as the "Queen of Beaches" in Goa. Located along the picturesque coastline of North Goa, Calangute Beach entices travelers with its pristine shoreline, soft sands, and breathtaking sunsets.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul> *Water Sports Adventure:* Dive into thrilling water sports adventures, including parasailing, windsurfing, and jet-skiing, or unwind with a leisurely swim in the warm Arabian Sea.
+        - *Beachside Relaxation:* Bask in the serenity of Calangute Beach, where you can lounge under swaying palm trees, sip on coconut water, and indulge in blissful moments of relaxation by the sea.
+        - *Local Cuisine:* Delight your taste buds with the flavors of Goa at beachside cafes and restaurants, serving delectable seafood delicacies, spicy vindaloos, and refreshing cocktails infused with tropical fruits.
+        - *Shopping Excursions:* Explore vibrant local markets and bustling streets for a shopping spree filled with colorful sarongs, handicrafts, jewelry, and souvenirs, offering a glimpse into the vibrant culture of Goa.
+         </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★☆ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 20,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>4 nights / 5 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.zongaroo.com/wp-content/uploads/2021/11/Calangute-Beach.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://www.travellersofindia.com/wp-content/uploads/2022/07/Calangute_Beach_Goa_Travellersofindia.com_-scaled.jpg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/a8/29/82/bosco-s-beach-shack.jpg" alt="Image 3">
+      </div>
+      
+  
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

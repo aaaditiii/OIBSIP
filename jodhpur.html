@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://www.adotrip.com/public/images/city/master_images/5e413b8034f49-Jodhpur_Tours.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Desert Oasis Retreat, Jodhpur Citadel</h1>
+      <h3>*Description:*</h3>
+       <p>Jodhpur Oasis" is a sanctuary nestled amidst the golden sands and regal splendor of Rajasthan's desert jewel. Immerse yourself in the timeless charm of Jodhpur as you explore labyrinthine alleyways adorned with vibrant hues and bustling markets. Experience the magic of Jodhpur, where every sunset paints the sky in hues of gold, and every dawn awakens the soul with promises of adventure and discovery.</p>
+       <h3> *Highlights:* </h3>
+       <p> <ul>-*Desert Majesty:* Dive into Jodhpur's royal heritage amidst golden sands, where every alley tells tales of valor, offering a majestic retreat in Rajasthan's desert charm.
+        - *Sunset Splendor:* Experience enchanting evenings, where the sky ignites with gold hues, accompanied by desert winds and savory delights.
+        - *Culinary Journey:* Delight in Rajasthan's flavors, savoring traditional dishes against majestic forts and bustling markets.
+        - *Craftsmanship Treasures:* Explore bazaars for exquisite handicrafts, immersing in Jodhpur's vibrant culture.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 55,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://th.bing.com/th/id/OIP.4fgJ1IrwdodDK58FsnH5JgAAAA?rs=1&pid=ImgDetMain" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIP.kwVvVv2zYMobZ-egOfvK3gHaF6?pid=ImgDet&w=474&h=378&rs=1" alt=" Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://deih43ym53wif.cloudfront.net/medium_jodhpur-india-shutterstock_1647371812.jpg_177d96793a.jpg" alt=" Image 2">
+      </div>
+      
+      
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

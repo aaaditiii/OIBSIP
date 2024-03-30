@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://miro.medium.com/max/3200/1*idBbkSkH4nXVIhDbA5QBEw.jpeg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Sunset Splendor, Jaipur Majesty</h1>
+      <h3>*Description:*</h3>
+       <p>Experience Jaipur's regal allure with mesmerizing sunsets, rich cuisine, and vibrant bazaars.</p>
+       <h3> *Highlights:* </h3>
+       <p> <ul>-Palatial Exploration: Immerse yourself in Jaipur's regal wonders, from majestic forts to bustling markets, or relax in luxurious accommodations fit for royalty.
+        Sunset Splendor: Witness captivating sunsets over ancient forts, accompanied by melodic tunes and delectable feasts amidst regal surroundings.
+        Culinary Journeys: Indulge in Rajasthani flavors at local eateries, savoring rich dishes against the backdrop of historic palaces and vibrant streets.
+        Artisanal Treasures: Explore Jaipur's markets for exquisite handicrafts, textiles, and jewelry, immersing yourself in the city's vibrant cultural tapestry.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 55,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.tripsavvy.com/thmb/ABnF-huMnl6Jl4CKFY3K9WBAwKI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-538201886-62671fc4cba54e7cb92d65d12d09f8be.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://www.savilerowtravel.com/wp-content/uploads/2016/12/india-country-image.jpg" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://preview.redd.it/15klkr3r1jx41.jpg?width=960&crop=smart&auto=webp&s=5c0d1a459590e62e802f2940ca9a1026d49ccbad" alt="Image 3">
+      </div>
+      
+      
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

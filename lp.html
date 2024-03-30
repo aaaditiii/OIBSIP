@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Agency</title>
+  <link rel="stylesheet" href="lp.css"> 
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h1>Travel Agency</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" id="signin-btn"><img src="https://cdn-icons-png.flaticon.com/128/6543/6543009.png" alt="Sign In"></a></li> 
+    </ul>
+  </nav>
+
+
+  <div class="popup" id="signin-popup">
+    <div class="popup-content">
+      <span class="close-btn" id="close-signin-popup">&times;</span>
+      <h2>Sign In</h2>
+      <form action="signin.php" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+  
+
+
+  <section id="agency-name">
+    <div class="container">
+        <h1>Explore the World with Our Travel Agency</h1>
+        <p>Your gateway to unforgettable adventures</p>
+    </div>
+
+    <div class="navigation-bar">
+      <input type="text" placeholder="Where do you want to go?">
+      <input type="date">
+      <a href="booking.html" class="button">Book Now</a>
+  </div>
+  </section>
+
+
+  <section id="packages">
+  <div class="container">  
+      <h1>Our Packages</h1>
+      <h2>Goa Tours</h2>
+      <a href="baga.html" class="invisible-link"> <div class="package">
+        <img src="https://indien.de/wp-content/uploads/sites/29/2018/05/goa-strand-alexir-turenkov-468671-unsplash.jpg" alt="Goa Package">
+        <div class="package-details">
+          <h3>Baga- The heart of Goa</h3>
+        
+          <p>Uncover Baga Beach's coastal charm and endless delights.</p>
+          <p>Rating: ★★★★★</p>
+          <p>Price: INR 25,000</p>
+          <p>Duration: 5N/6D</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="calangute.html" class="invisible-link"> <div class="package">
+        <img src="https://www.tripsavvy.com/thmb/Kdm2bS60V0TXt113OSelgS2PFSs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-903398436-5c612e4a46e0fb00017dd31f.jpg" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>Calangute Package Tour</h3>
+          <p>Embrace the beauty of Calangute Beach's sun-soaked shores.</p>
+          <p>Rating: ★★★★</p>
+          <p>Price: INR 20,000</p>
+          <p>Duration: 4N/5D</p>
+        </div>
+      </div>
+    </a>
+      <a href="butterfly.html" class="invisible-link">  <div class="package">
+        <img src="https://cabbazar.com/assets/img/trips/karwar.jpg" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>Butterfly Beach Package Tour</h3>
+          <p>Escape to the secluded paradise of Butterfly Beach, where crystal-clear waters and pristine sands await.</p>
+          <p>Rating: ★★★</p>
+          <p>Price: INR 15,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+    </div>
+ 
+  </section>
+
+  <section id="packages1">
+    <div class="container">
+      <h2>Delhi Tours</h2>
+      <a href="taj.html" class="invisible-link">  <div class="package">
+        <img src="https://www.unciatrails.com/wp-content/uploads/2020/07/Taj2.jpg" alt="Goa Package">
+        <div class="package-details">
+          <h3>The Capital Tapestry: Taj Mahal</h3>
+          <p>Delve into Delhi's rich tapestry of history and culture.</p>
+          <p>Rating: ★★★★★</p>
+          <p>Price: INR 20,000</p>
+          <p>Duration: 2N/3D</p>
+        </div>
+      </div>
+    </a>
+      <a href="cann.html" class="invisible-link">  <div class="package">
+        <img src="https://th.bing.com/th/id/R.846a87735d00e9ded32cb99806018862?rik=9ZDA5WP3N6AKHQ&riu=http%3a%2f%2fpropguide.proptiger.com%2fwp-content%2fuploads%2f2014%2f06%2fCannaught-Place_2.jpg&ehk=T%2fC7KlmVelDTSeF%2bzRcXTnrf85qsHH9QgKR1QxaCdmA%3d&risl=&pid=ImgRaw&r=0" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>The heart of New Delhi: Connaught's Cultural Hub</h3>
+          <p>Explore the vibrant essence of Connaught Place, Delhi's iconic hub.</p>
+          <p>Rating: ★★★★</p>
+          <p>Price: INR 40,000</p>
+          <p>Duration: 4N/5D</p>
+        </div>
+      </div>
+    </a>
+      <a href="hum.html" class="invisible-link">  <div class="package">
+        <img src="https://theurgetowander.files.wordpress.com/2013/11/dsc_5242-copy.jpg" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>Mughal Majesty: The Humayun Tomb Legacy</h3>
+          <p>Step into history's embrace at Humayun's Tomb, a testament to Mughal grandeur and architectural splendor.</p>
+          <p>Rating: ★★★</p>
+          <p>Price: INR 35,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="packages2">
+    <div class="container">
+      <h2>Kerala Tours</h2>
+      <a href="alleppey.html" class="invisible-link">  <div class="package">
+        <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2021/09/Best-Places-to-Visit-in-Alleppey-Kerala.jpg" alt="kerala Package">
+        <div class="package-details">
+          <h3>Alleppey: Serene Backwater Bliss</h3>
+          <p>Glide through serene backwaters and immerse yourself in nature's tranquil embrace.</p>
+          <p>Rating: ★★★★★</p>
+          <p>Price: INR 30,000</p>
+          <p>Duration: 5N/6D</p>
+        </div>
+      </div>
+    </a>
+      <a href="munnar.html" class="invisible-link"> <div class="package">
+        <img src="https://cdn.pixabay.com/photo/2020/01/16/04/52/munnar-4769654_1280.jpg" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>Munnar: Verdant Wonderland</h3>
+          <p>Explore the serene haven where misty mornings green lush tea gardens, offering a tranquil escape into nature's embrace.</p>
+          <p>Rating: ★★★★</p>
+          <p>Price: INR 20,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+      <a href="kochi.html" class="invisible-link">  <div class="package">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Kochi-725765.jpg" alt="Goa Package"> 
+        <div class="package-details">
+          <h3>Kochi- Vibrant Port City</h3>
+          <p>Discover Kochi's historic streets and vibrant markets, where every corner holds a story waiting to be explored.</p>
+          <p>Rating: ★★★</p>
+          <p>Price: INR 15,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="packages3">
+    <div class="container">
+      <h2>Kashmir Tours</h2>
+      <a href="dal.html" class="invisible-link">  <div class="package">
+        <img src="https://www.scrolldroll.com/wp-content/uploads/2016/05/Dal-Lake-Most-Beautiful-Places-Of-India.jpg" alt="kashmir Package">
+        <div class="package-details">
+          <h3>Dal Lake: A mirror of tranquility amidst Kashmir's beauty.</h3>
+          <p></p>Set sail on a serene voyage through Kashmir's tranquil backwaters, surrendering to nature's tranquil embrace.
+          <p>Rating: ★★★★★</p>
+          <p>Price: INR 40,000</p>
+          <p>Duration: 5N/6D</p>
+        </div>
+      </div>
+    </a>
+      <a href="ladakh.html" class="invisible-link"> <div class="package">
+        <img src="https://www.peakadventuretour.com/blog/wp-content/uploads/2014/02/zanskr-1.jpg" alt="Package"> 
+        <div class="package-details">
+          <h3>Ladakh: Where the heavens meet the earth in a breathtaking dance of rugged beauty.</h3>
+          <p>Explore the realm where mountain majesty meets the endless sky.</p>
+          <p>Rating: ★★★★</p>
+          <p>Price: INR 45,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+      <a href="gulmarg.html" class="invisible-link">  <div class="package">
+        <img src="https://th.bing.com/th/id/OIP.KB7gMkcV2-bU18jE0iPfYgHaFj?rs=1&pid=ImgDetMain" alt=" Package"> 
+        <div class="package-details">
+          <h3>Gulmarg: Where snow-kissed peaks whisper tales of enchantment.</h3>
+          <p>Amidst snow-draped splendor, nature's masterpiece unfolds in the heart of the Himalayas.</p>
+          <p>Rating: ★★★</p>
+          <p>Price: INR 55,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="packages4">
+    <div class="container">
+      <h2>Rajasthan Tours</h2>
+      <a href="jaipur.html" class="invisible-link">  <div class="package">
+        <img src="https://viajeropeligro.com/wp-content/uploads/2021/04/am1.jpg" alt="kashmir Package">
+        <div class="package-details">
+          <h3>Jaipur: A symphony of colors and culture, where every corner whispers tales of regal splendor.</h3>
+          <p>Where the vibrant hues of history paint every corner, Jaipur whispers tales of royalty and splendor.</p>
+          <p>Rating: ★★★★★</p>
+          <p>Price: INR 40,000</p>
+          <p>Duration: 5N/6D</p>
+        </div>
+      </div>
+    </a>
+      <a href="udaipur.html" class="invisible-link"> <div class="package">
+        <img src="https://www.holidify.com/images/compressed/3137.jpg" alt="Package"> 
+        <div class="package-details">
+          <h3>Udaipur: Where lakes mirror palaces, crafting a serene masterpiece.</h3>
+          <p>In the heart of Rajasthan's regal embrace, Udaipur sparkles like a gem in the desert, its lakes mirroring the beauty of its palaces and legends.</p>
+          <p>Rating: ★★★★</p>
+          <p>Price: INR 45,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+      <a href="jodhpur.html" class="invisible-link">  <div class="package">
+        <img src="https://dynamic.tourtravelworld.com/blog_images/umaid-bhawan-palace-20170425042227.jpg" alt=" Package"> 
+        <div class="package-details">
+          <h3>Jodhpur: A gem of Rajasthan's desert, where every alley whispers tales of valor and splendor.</h3>
+          <p>Explore Jodhpur, where every corner reveals a tapestry of Rajasthan's rich history and vibrant culture.</p>
+          <p>Rating: ★★★</p>
+          <p>Price: INR 55,000</p>
+          <p>Duration: 3N/4D</p>
+        </div>
+      </div>
+    </a>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section id="contact">
+    <div class="container5">
+      <h2>Contact Us</h2>
+      <form action="contact.php" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="lp.js"></script> 
+  <form action="signup.php" method="POST">
+</form>
+
+</body>
+</html>

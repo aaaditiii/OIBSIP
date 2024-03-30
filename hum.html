@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://i.dailymail.co.uk/i/pix/2016/04/18/00/3347DC8D00000578-3544796-image-a-4_1460935753601.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Humayun's Tomb Expedition</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a mesmerizing journey to Humayun's Tomb, a UNESCO World Heritage Site and architectural marvel located in the heart of New Delhi. Immerse yourself in the rich history, grandeur, and beauty of this iconic monument, which stands as a testament to Mughal architecture and craftsmanship.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- - *Architectural Splendor:* Marvel at the breathtaking beauty and intricate design of Humayun's Tomb, a masterpiece of Mughal architecture characterized by its towering dome, elegant arches, and intricate marble lattice work, set amidst lush green gardens and serene water channels.
+        - *Gardens and Landscapes:* Stroll through the lush gardens and manicured lawns surrounding Humayun's Tomb, where fragrant flowers, shady trees, and tranquil water features create a peaceful oasis amidst the bustling cityscape of New Delhi.
+        - *Cultural Immersion:* Immerse yourself in the vibrant cultural heritage of Delhi, as you explore nearby attractions such as the Qutub Minar, India Gate, and Lodhi Gardens, and discover the rich tapestry of history, art, and architecture that defines the city's identity. </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 25,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://th.bing.com/th/id/R.72c15514a42869247f580d7fbe6e0e54?rik=7KLaqfSKDBQatw&riu=http%3a%2f%2fwww.thehistoryhub.com%2fwp-content%2fuploads%2f2014%2f04%2fHumayun-Tomb-Images.jpg&ehk=LlpYuBHZ9F%2fW0MBfu8L5oWy0iiAGUkItUb0xjYdSa%2fo%3d&risl=&pid=ImgRaw&r=0" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/R.f2e7cdcd40bc5d777570220c72a33a00?rik=6BRLkxzF3Bga9Q&riu=http%3a%2f%2fwww.thehistoryhub.com%2fwp-content%2fuploads%2f2014%2f04%2fInterior-of-Humayun-Tomb.jpg&ehk=gVlQZyEdCd8z6EjHM805idz7O5T%2fxwgTFMSS%2bD4Svmo%3d&risl=&pid=ImgRaw&r=0" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIP.Ufg13wug-HuUb0AqvPfMvAHaFD?rs=1&pid=ImgDetMain" alt="Image 3">
+      </div>
+      
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

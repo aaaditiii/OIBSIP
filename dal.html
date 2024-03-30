@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://www.scrolldroll.com/wp-content/uploads/2016/05/Dal-Lake-Most-Beautiful-Places-Of-India.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Serene Shores Escape, Dal Lake Retreat</h1>
+      <h3>*Description:*</h3>
+       <p> Escape to our lakeside sanctuary on Dal Lake, where tranquility meets luxury. Nestled amidst Kashmir's stunning landscapes, our retreat offers a serene getaway with personalized service, breathtaking views, and unforgettable experiences. Whether you're gliding on a Shikara or simply relaxing on the sundeck, every moment promises relaxation and rejuvenation.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- *Lake Escapades:* Dive into Dal Lake's offerings, from tranquil Shikara rides to lively floating markets, or unwind aboard a houseboat.
+        - *Twilight Charm:* Experience Dal Lake's magical evenings with captivating sunsets, live music, and intimate dinners on your houseboat.
+        - *Flavors of Kashmir:* Delight in Kashmiri cuisine at lakeside eateries, featuring aromatic rice dishes and authentic Kashmiri chai.
+        - *Artisanal Treasures:* Explore lakeside markets for Kashmiri handicrafts, textiles, and jewelry, immersing yourself in local culture and craftsmanship.</ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 40,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>5 nights / 6 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://www.beautifulworld.com/wp-content/uploads/2017/07/Srinager-Dal-Lake-1024x768.jpg" alt="Baga Beach Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://www.picnicwale.com/attractions/assets/sightseeing/dal-lake-in-kashmir-barnner.jpg" alt="Baga Beach Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://www.scrolldroll.com/wp-content/uploads/2016/05/Dal-Lake-Most-Beautiful-Places-Of-India.jpg" alt="Baga Beach Image 2">
+      </div>
+      
+      <!-- Add more images here if needed -->
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>

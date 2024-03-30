@@ -1,0 +1,378 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url('https://i.pinimg.com/originals/7a/8b/9e/7a8b9e87d237945d1a73b248747af21d.jpg'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+}
+
+.container {
+  width: 50%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  font-size: large;
+}
+
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff; 
+  padding: 20px; 
+}
+
+.logo h1 {
+  font-size: 1.5rem; 
+}
+
+.nav-links {
+  list-style-type: none; 
+}
+
+.nav-links li {
+  display: inline; 
+  margin-right: 20px; 
+}
+
+.nav-links li:last-child {
+  margin-right: 0; 
+}
+
+.nav-links a {
+  text-decoration: none; 
+  color: #fff; 
+}
+
+#agency-name {
+  text-align: center; 
+  padding: 50px 0; 
+}
+
+#agency-name h1 {
+  color: #fff;
+}
+
+#agency-name p {
+  color: #fff;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #00bcd4; 
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: #0097a7; 
+}
+
+.container {
+  text-align: center;
+}
+
+
+#packages {
+  background-image: url('https://cdn1.goibibo.com/voy_ing/t_fs/goa-mandrem-beach-147714429747o.jpeg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  padding: 50px 0; 
+}
+
+.package {
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px; 
+  margin-bottom: 30px; 
+  display: flex; 
+  align-items: center; 
+}
+
+.package img {
+  width: 200px; 
+  height: auto; 
+  margin-right: 20px; 
+}
+
+.package-details {
+  flex: 1; 
+}
+
+.package h3 {
+  color: #007bff; 
+}
+
+.package p {
+  color: #333; 
+}
+
+#packages1 {
+  background-image: url('https://wallpapercave.com/wp/wp9429844.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding: 50px 0;
+}
+
+#packages2 {
+  background-image: url('https://images.pexels.com/photos/6544756/pexels-photo-6544756.jpeg?cs=srgb&dl=pexels-jaiju-jacob-6544756.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  padding: 50px 0; 
+}
+
+#packages3 {
+  background-image: url('https://media.webdunia.com/_media/en/img/photo-gallery/current-affairs/kashmir-covered-with-snow-in-this-winter/full/kashmir-covered-with-snow-in-this-winter-16083796326625.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+  padding: 50px 0; 
+}
+
+#packages4 {
+  background-image: url('https://www.yonder.fr/sites/default/files/styles/insertovertitle/public/contenu/destinations/01-taj-rambagh-palace-jaipur-rajasthan-01.jpg?itok=CrDgr7MT'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  padding: 50px 0; 
+}
+
+.nav-links li:last-child {
+  position: relative;
+}
+
+.nav-links li:last-child img {
+  width: 40px; 
+  height: auto;
+  cursor: pointer;
+  margin-left: 1200px; 
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d8e4f3; 
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  max-width: 80%;
+  width: 300px;
+}
+
+.popup-content {
+  text-align: center; 
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="password"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px; 
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #555;
+}
+
+form {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container5 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.navigation-bar {
+  max-width: 800px; 
+  margin: 100px auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(153, 188, 225, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-bar input[type="text"],
+.navigation-bar input[type="date"],
+.navigation-bar .button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.navigation-bar input[type="text"],
+.navigation-bar input[type="date"] {
+  width: 200px;
+  background-color: #fff;
+}
+
+.navigation-bar .button {
+  background-color: #ffc107;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-bar .button:hover {
+  background-color: #ff9800;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navigation-bar input[type="text"],
+  .navigation-bar input[type="date"],
+  .navigation-bar .button {
+    margin-bottom: 10px;
+  }
+
+  .navigation-bar .button {
+    width: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible-link{
+  color: inherit;
+  text-decoration: none;
+}
+
+
+#cart-icon {
+  width: 30px; 
+  height: 30px; 
+  margin-right: 5px; 
+}
+
+#cart-count {
+  background-color: #8b2a71; 
+  color: #fff; 
+  padding: 3px 8px; 
+  border-radius: 50%; 
+  font-size: 14px;
+}
+
+
+
+    
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.container5 {
+  text-align: center;
+  background-image: url('https://i1.wp.com/triponzy.com/blog/wp-content/uploads/2019/02/jaipur.jpg?ssl=1'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  padding: 50px 0; 
+}
+
+
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Package Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://th.bing.com/th/id/R.6e4f114371adce3a3fe7bd7a493e9b0e?rik=5pS52J4UrctGYw&riu=http%3a%2f%2fwww.tilytravels.com%2fuploads%2f3%2f7%2f7%2f1%2f37712685%2fbutterfly-beach_orig.jpg&ehk=NItEE3cPePAi7rWVl%2fGkWhS%2bIElgrQ%2fXxv59GKbW2ng%3d&risl=&pid=ImgRaw&r=0');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .description {
+      padding: 20px;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .image-container.active {
+      display: block;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      color: #666;
+    }
+
+    .book-now-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #eff2f5;
+        color: #5e7bad;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 50px;
+    }
+
+    .book-now-button :hover{
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="description">
+      <h1>Package Name: Butterfly Beach Bliss</h1>
+      <h3>*Description:*</h3>
+       <p> Embark on a tranquil escape to Butterfly Beach, a hidden gem nestled along the pristine shores of South Goa. Tucked away from the bustling crowds, Butterfly Beach enchants visitors with its secluded cove, powdery sands, and enchanting natural surroundings.</p>
+        
+       <h3> *Highlights:* </h3>
+       <p> <ul>- *Secluded Paradise:* Immerse yourself in the untouched beauty of Butterfly Beach, where azure waters meet lush greenery, creating a serene haven for relaxation and rejuvenation.
+        - *Snorkeling and Diving:* Explore the vibrant underwater world of Butterfly Beach with thrilling snorkeling and diving adventures, encountering colorful coral reefs, exotic marine life, and hidden treasures beneath the waves.
+        - *Picnic and Leisure:* Enjoy leisurely picnics and romantic strolls along the tranquil shoreline, surrounded by panoramic views of the Arabian Sea and the rugged cliffs that frame the beach.
+        - *Dolphin Spotting:* Embark on an unforgettable dolphin-watching excursion, where you can witness playful dolphins frolicking in the clear waters just off the coast of Butterfly Beach.
+        - *Sunset Spectacle:* Experience the magic of a breathtaking sunset over the Arabian Sea, painting the sky in hues of gold and orange, creating a mesmerizing backdrop for unforgettable moments. </ul></p>
+        
+       <h3> *Rating:* </h3>
+       <p>★★★★★ (Based on traveler reviews)</p>
+        
+        <h3>*Package Price:* </h3>
+        <p>Starting from INR 30,000 per person</p>
+        
+       <h3>*Duration:* </h3> 
+       <p>3 nights / 4 days</p>
+    </div>
+    
+    <div class="images-container">
+      <div class="image-container active">
+        <img src="https://sambadenglish.com/wp-content/uploads/2020/11/butterfly-island-and-beach-goa-entry-fee-timings-holidays-reviews-header.jpg" alt="Beach Image 1">
+      </div>
+      <div class="image-container">
+        <img src="https://i.pinimg.com/originals/d6/d1/35/d6d1353e688531532ab9df28a9f95a0e.jpg" alt="Beach Image 2">
+      </div>
+      <div class="image-container">
+        <img src="https://travelasiablog.com/wp-content/uploads/2023/05/Dolphins-Near-Butterfly-Beach-1024x538.jpg" alt="Image 3">
+      </div>
+      
+   
+      
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+
+      <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      imageContainers.forEach(container => {
+        container.classList.remove('active');
+      });
+      imageContainers[index].classList.add('active');
+    }
+
+    showImage(currentIndex);
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageContainers.length) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageContainers.length;
+      showImage(currentIndex);
+    }
+
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+  </script>
+</body>
+</html>
